@@ -7,12 +7,12 @@ Created on 08 Mar 2025
 @Contact :   vitor.barroso.s@gmail.com
 @License :   (C)Copyright 2025, Vitor Barroso
 @Desc    :   Base class for simulation of Emergency Department resources
-                using SimPy and prophet.
+                using SimPy.
 '''
 import sys
 import os
 sys.path.append(os.path.abspath("./"))
-from python.simulation_base import EDSimulation
+from python.sim.simulation_base import EDSimulation
 import numpy as np
 import pandas as pd
 import simpy

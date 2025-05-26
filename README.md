@@ -31,12 +31,14 @@ Here, I use the original simulation code to build a web app that can be run on a
 
 ### Project Structure <a name = "struct"></a>
 ```
-├── R
 ├── README.md
+├── R
 ├── data
+│   ├── ed_simulation_app.gif
 │   └── simulation_report.pdf
 └── python
-    ├── ED Resource Reneged.ipynb
+    ├── sim
+    │   └── simulation_base.py
     ├── dash_app
     │   ├── app.py
     │   ├── assets
@@ -52,9 +54,10 @@ Here, I use the original simulation code to build a web app that can be run on a
     │   └── views
     │       ├── simulation_view.py
     │       └── table_view.py
-    ├── requirements.txt
-    ├── simulation_base.py
-    └── test_simulation.ipynb
+    ├── notebooks
+    │   ├── ED Resource Reneged.ipynb
+    │   └── test_simulation.ipynb
+    └── requirements.txt
 ```
 ## Getting Started <a name = "getting_started"></a>
 
@@ -130,11 +133,14 @@ Users can set various parameters, such as patient arrival rates, resource availa
 
 Once you are happy with your parameter choices, you can download a pdf with the compiled results of up to three simulations.
 
+Here is an example usage of the app:
+<img src="./data/ed_simulation_app.gif"/>
+
 ## Results <a name = "results"></a>
 
 You can view the detailed simulation report, which includes analysis and results, directly below:
 
-![Simulation Report](./data/simulation_report.pdf)
+![Simulation Report](https://raw.githubusercontent.com/vbarrosos/nhs_ed_simulation/tree/main/data/simulation_report.pdf)
 
 ## Built Using <a name = "built_using"></a>
 
@@ -145,8 +151,9 @@ You can view the detailed simulation report, which includes analysis and results
 - Matplotlib - Plotting and data visualisation
 - Dash - Dashboard creation
 
-### R
-- In preparation
+### R (in preparation)
+- Simmer - Discrete-event simulations (equivalent to Python's SimPy)
+- Shiny - Dashboard creation
 
 ## Authors <a name = "authors"></a>
 
