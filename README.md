@@ -140,7 +140,7 @@ Here is an example usage of the app:
 
 You can view the detailed simulation report, which includes analysis and results, directly below:
 
-![Simulation Report](https://raw.githubusercontent.com/vbarrosos/nhs_ed_simulation/tree/main/data/simulation_report.pdf)
+![Simulation Report](./data/simulation_report.pdf)
 
 ## Built Using <a name = "built_using"></a>
 
