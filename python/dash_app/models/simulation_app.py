@@ -61,40 +61,6 @@ class AppSimulation(EDSimulation):
         """
         super().__init__(*args,**kwargs)
         
-    def run_simulation(self, NUM_BEDS):
-        """
-        Prepare the simulation environment, create separate resources for each acuity and run simulation.
-        ===========
-        ARGUMENTS:
-        ===========
-        - NUM_BEDS: dict
-            Number of beds for each acuity level.
-        ============
-        RETURNS:
-        ============
-        - patient_count: dict
-            Patient count for each acuity level.
-        - patient_data: pd.DataFrame
-            Patient data with ID, acuity, arrival time and wait time.
-        ============
-        """
-        self.reset_variables()
-        self.NUM_BEDS = NUM_BEDS
-        
-        random.seed(self.RANDOM_SEED)
-        env = simpy.Environment()
-        
-        # Create data structure of resources for each acuity level
-        resources = {acuity: simpy.Resource(env, capacity=beds) for acuity, beds 
-                     in NUM_BEDS.items()}
-        self.total_beds = sum(list(NUM_BEDS.values()))
-        
-        env.process(self.patient_arrival(env,resources))
-        env.process(self.collect_data(env, resources))
-        [env.run(until=i) for i in tqdm(range(1,self.SIMULATION_DURATION), desc="Running Simulation")]
-        
-        return pd.DataFrame(self.patient_data)
-        
     def prepare_output_dict(self,):
         """
         Prepare output dictionary with simulation data.

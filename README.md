@@ -32,7 +32,6 @@ Here, I use the original simulation code to build a web app that can be run on a
 ### Project Structure <a name = "struct"></a>
 ```
 ├── README.md
-├── R
 ├── data
 │   ├── ed_simulation_app.gif
 │   └── simulation_report.pdf
@@ -111,9 +110,9 @@ That's it! You now have the Dash app up and running. Make sure to keep your virt
 
 You can also run the test simulation using the provided Jupyter notebook:
 
-1. Navigate to the `python` directory:
+1. Navigate to the `python/notebooks` directory:
     ```bash
-    cd python
+    cd python/notebooks
     ```
 
 2. Open the `test_simulation.ipynb` notebook:
@@ -138,9 +137,11 @@ Here is an example usage of the app:
 
 ## Results <a name = "results"></a>
 
-You can view the detailed simulation report, which includes analysis and results, directly below:
+You can view the detailed simulation report, which includes parameters and results, directly below:
 
 ![Simulation Report](./data/simulation_report.pdf)
+
+In this report, I ran a comparative analysis between three different simulations, where I decreased from simulation 1 the total lengths of stay in hours for Major acuity patients (sim 2) and then for all patients (sim 3). Between simulations 1 and 2, Major patients would face queues seven times shorter on average. This type of reduction on the total length of stay could be achieved, for example, by implement earlier patient discharge or transfer to other hospital services.
 
 ## Built Using <a name = "built_using"></a>
 
